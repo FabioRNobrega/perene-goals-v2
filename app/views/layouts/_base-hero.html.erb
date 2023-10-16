@@ -1,0 +1,34 @@
+<div class="banner">
+  <%= image_tag "banner.png", alt: "Banner", class: "banner__image" %>
+  <div class="banner__overlay">
+    <div class="banner__overlay--text">
+      <h2 class="banner__overlay--text-quote" id="quote">
+        <%= @quote_list.first[:quote].to_json.html_safe %>
+      </h2>
+      <div class="banner__divider"></div>
+      <h4 class="banner__overlay--text-author">
+        <%= @quote_list.first[:author].to_json.html_safe %>
+      </h4>
+    </div>
+  </div>
+</div>
+
+<script>
+  let currentIndex = 0;
+  const quotes = <%= @quote_list.to_json.html_safe %>;
+
+  document.addEventListener("DOMContentLoaded", function() {
+    setInterval(updateQuote, 5000);
+
+    function updateQuote() {
+      const quoteElement = document.getElementById("quote");
+      const authorElement = document.querySelector(".banner__overlay--text-author");
+
+      currentIndex = (currentIndex + 1) % quotes.length;
+      const currentQuote = quotes[currentIndex];
+
+      quoteElement.innerText = currentQuote.quote;
+      authorElement.innerText = currentQuote.author;
+    }
+  });
+</script>

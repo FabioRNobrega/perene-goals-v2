@@ -1,0 +1,36 @@
+.navbar {
+    background-color: var(--primary);
+    color: var(--neutral-color-light);
+    font-family: var(--font-family-title);
+    padding: 1rem;
+    margin-bottom: 50px;
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .nav-item {
+    margin: 0 1rem;
+  }
+  
+  .nav-link {
+    text-decoration: none;
+    color: var(--neutral-color-light);
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: var(--neutral-color-darker);
+  }
+  
+  .nav-link.logout {
+    color: var(--feedback-error);
+  }
+  
+  .nav-link.logout:hover {
+    color: var(--feedback-error); /* Pode ajustar a cor de hover, se desejar */
+  }
+  
