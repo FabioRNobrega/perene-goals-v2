@@ -5,7 +5,7 @@ This project was generated with [Rails](https://guides.rubyonrails.org/v7.1/).
 
 We use:
  - Rails: 7.1.1
- - Ruby: 3.1.4
+ - Ruby: 3.2.2
 
 Table of contents
 =================
